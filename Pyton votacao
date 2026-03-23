@@ -1,0 +1,39 @@
+# Sistema de votação
+
+votos1 = 0
+votos2 = 0
+votos3 = 0
+
+total = int(input("Quantas pessoas vão votar? "))
+
+for i in range(total):
+    while True:
+        voto = int(input(f"Pessoa {i+1}, vote (1, 2 ou 3): "))
+
+        if voto == 1:
+            votos1 += 1
+            break
+        elif voto == 2:
+            votos2 += 1
+            break
+        elif voto == 3:
+            votos3 += 1
+            break
+        else:
+            print("Voto inválido! Tente novamente.")
+
+# Resultado
+print("\nResultado da votação:")
+print("Candidato 1:", votos1)
+print("Candidato 2:", votos2)
+print("Candidato 3:", votos3)
+
+# Verificar vencedor
+if votos1 > votos2 and votos1 > votos3:
+    print("Vencedor: Candidato 1")
+elif votos2 > votos1 and votos2 > votos3:
+    print("Vencedor: Candidato 2")
+elif votos3 > votos1 and votos3 > votos2:
+    print("Vencedor: Candidato 3")
+else:
+    print("Empate!")
